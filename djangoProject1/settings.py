@@ -25,7 +25,7 @@ SECRET_KEY = 'zqr(x!^_lot!u5w4y2gg3e@f4+dytmon%(wh)gbkyl63b%-i65'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pure-reaches-41056.herokuapp.com']
 
 
 # Application definition
