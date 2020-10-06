@@ -1,0 +1,72 @@
+body {
+	background-color: #dae0e6;
+}
+nav{
+	height:48px;
+}
+.C1 {
+	background-color: #dae0e6;
+}
+.user-name{
+	display:flex;
+	flex-direction: row;
+	height:24px;
+	width:100%;
+	font-size:12px;
+	align-items: center;
+}
+.content{
+	height:250px;
+}
+.content p{
+	font-size:22px;
+}
+.content a{
+	position: relative;
+	top:-15px;
+	color: blue;
+}
+.footer{
+	font-weight: bold;
+	height:20px;
+	font-size:12px;
+	color:#878a8c;
+}
+#card1{
+	margin-top: 10px;
+	background-color:white;
+	display:flex;
+	width:550px;
+	
+	flex-direction: column;
+	padding:10px;
+}
+#card2{
+	margin-top: 10px;
+	background-color:white;
+	width:310px;
+	height: 400px;
+	border-radius: 4px;
+	padding: 0px;
+	vertical-align: bottom;
+}
+.acard-header{
+	background-color:#172e4e;
+	color:white;
+	width:310px;
+	height:80px;
+	padding: 10px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+
+}
+
+.sidebar li{
+	/* background-color:#ebebeb; */
+	display: block;
+	color: black;
+	height:60px;
+	text-decoration: none;
+	border-bottom: solid 1px grey;
+  }
+   
