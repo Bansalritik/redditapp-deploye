@@ -8,7 +8,6 @@ from .models import Reddit_Data
 
 
 def Index(request):
-    Reddit_Data.objects.all().delete()
     try:
         Code = request.GET['code']  # This is coming back correctly
     except:
@@ -38,7 +37,7 @@ def Index(request):
                                            Reddit_User=Author_Name, Reddit_Subred=str(Sub), Reddit_Body=Submission.url,
                                            Reddit_Link=temp)
     print(Reddit_Data.objects.all().count())
-    Data = Reddit_Data.objects.filter(Reddit_Link=True)
+    Data = Reddit_Data.objects.filter(Reddit_Link=True, Reddit_Username = str(Name))
     print(Data.count())
     Users = Reddit_Data.objects.filter(Reddit_Username=str(Name)).values('Reddit_User').annotate(total=Count('Reddit_User')).order_by('-total')[:3]
     Domains = Reddit_Data.objects.filter(Reddit_Username=str(Name)).values('Reddit_Domain').annotate(total=Count('Reddit_Domain')).order_by('-total')[:3]
