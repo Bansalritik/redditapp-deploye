@@ -39,8 +39,8 @@ def Index(request):
     print(Reddit_Data.objects.all().count())
     Data = Reddit_Data.objects.filter(Reddit_Link=True)
     print(Data.count())
-    Users = Reddit_Data.objects.filter(Reddit_Username=str(Name)).values('Reddit_User').annotate(total=Count('Reddit_User')).order_by('-total')[:5]
-    Domains = Reddit_Data.objects.filter(Reddit_Username=str(Name)).values('Reddit_Domain').annotate(total=Count('Reddit_Domain')).order_by('-total')[:5]
+    Users = Reddit_Data.objects.filter(Reddit_Username=str(Name)).values('Reddit_User').annotate(total=Count('Reddit_User')).order_by('-total')[:3]
+    Domains = Reddit_Data.objects.filter(Reddit_Username=str(Name)).values('Reddit_Domain').annotate(total=Count('Reddit_Domain')).order_by('-total')[:3]
     Context = {
         'Datas': Data,
         'Users': Users,
