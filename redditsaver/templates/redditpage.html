@@ -4,51 +4,57 @@
 <head>
     <meta charset="utf-8" />
     <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'redditpagecss.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </head>
 <body>
     <div class="ui inverted menu">
         <a class="active item">
             <i class="reddit icon large"></i>
           Hello {{ UserName }}, Welcome to Reddit
-        </a>
     </div>
     <div class="ui stackable grid" style="margin-left: 10em; margin-top: 10em;">
         <div class="left floated nine wide column">
-            <h1 class="ui header">Top Reddits:</h1>
+            <h1 class="ui header blue">Top Posts:</h1>
             <div class="ui three stackable cards">
                 {% for fields in Datas %}
                     <div class="ui card">
-                        <div class="content">
-                          <i class="user secret blue"></i> u/{{ fields.Reddit_User }}
+                      <div class="content">
+                        <div class="header">u/{{ fields.Reddit_Subred }}</div>
+                        <div class="meta">
+                          <span class="right floated time">2 days ago</span>
+                          <span class="category">{{ fields.Reddit_Username }}</span>
                         </div>
-                        <div class="image">
-                            <div class="ui Large header">{{ fields.Reddit_Title }}</div>
-                            <div class="ui medium header"><a href="{{ fields.Reddit_Body }}">{{ fields.Reddit_Body }}</a></div>
+                      </div>
+                      <div class="content">
+                        <div class="description">
+                          <h4 class="ui header">
+                            {{ fields.Reddit_Title }}
+                          </h4>
+                          <p><a href="{{ fields.Reddit_Body }}">{{ fields.Reddit_Body }}</a></p>
                         </div>
-                        <div class="content">
-                          <span class="right floated">
-                            <i class="heart outline like icon"></i>
-                            {{ fields.Reddit_Score }} upvotes
-                          </span>
-                          <i class="comment icon"></i>
-                          {{ fields.Reddit_Comments }} comments
-                        </div>
+                      </div>
+                      <div class="extra content">
+                        <span class="right floated">
+                          <i class="heart outline like icon red"></i>
+                          <span style="color: black;">{{ fields.Reddit_Score }} upvotes</span>
+                        </span>
+                        <i class="comment icon black"></i>
+                        <span style="color: black;">{{ fields.Reddit_Comments }} comments</span>
+                      </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
         <div class="right floated six wide column">
-            <h1 class="ui header">Top Users</h1>
+            <h1 class="ui header">Top Users:</h1>
             <div class="ui stackable horizontal large list">
                 {% for fields in Users %}
                     <div class="item"><div class="ui big red horizontal label">{{ fields.Reddit_User }}</div></div>
                 {% endfor %}
             </div>
-            <h1 class="ui header">Top Domains</h1>
+            <h1 class="ui header">Top Domains:</h1>
             <div class="ui stackable horizontal large list">
                 {% for fields in Domains %}
                     <div class="item"><div class="ui big red horizontal label">{{ fields.Reddit_Domain }}</div></div>
