@@ -16,7 +16,10 @@ def Index(request):
                           client_secret="tAGWTHloyLIXbTRpCgV3FMSQVg8",
                           redirect_uri="https://pure-reaches-41056.herokuapp.com/index",
                           user_agent="testscript by u/fakebot3")
-    Redditt.auth.authorize(Code)
+    try:
+        Redditt.auth.authorize(Code)
+    except:
+        return redirect('/')
     Name = Redditt.user.me()
     Subscribed = list(Redditt.user.subreddits(limit=None))
     for Sub in Subscribed:
