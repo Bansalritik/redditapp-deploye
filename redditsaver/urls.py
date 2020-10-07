@@ -18,5 +18,5 @@ from . import views
 
 urlpatterns = [
     path('', views.Reddit, name='Reddit'),
-    path('http://pure-reaches-41056.herokuapp.com/index', views.Index, name='Index')
+    path('https://pure-reaches-41056.herokuapp.com/index', views.Index, name='Index')
 ]
