@@ -22,6 +22,7 @@ def Index(request):
     for Sub in Subscribed:
         SubRedditt = Redditt.subreddit(str(Sub))
         New_Redd = SubRedditt.new(limit=None)
+        i = 1
         for Submission in New_Redd:
             if not Reddit_Data.objects.filter(Reddit_Id=Submission.id, Reddit_Username=str(Name)).exists():
                 temp = False
@@ -36,6 +37,9 @@ def Index(request):
                                            Reddit_Score=Submission.score, Reddit_Domain=Submission.domain,
                                            Reddit_User=Author_Name, Reddit_Subred=str(Sub), Reddit_Body=Submission.url,
                                            Reddit_Link=temp)
+            if i>101:
+                break
+            i+=1
     print(Reddit_Data.objects.all().count())
     Data = Reddit_Data.objects.filter(Reddit_Link=True, Reddit_Username = str(Name))
     print(Data.count())
