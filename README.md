@@ -1,6 +1,6 @@
 # redditapp-deploye
 An Application that captures the visitor's and host's information and triggers an email and SMS to the host about the visitor's details, also as the visitor checks out, it triggers an email to the visitor about his visit.
-If you want to have a demo of the web app you can [click here](https://summergeeks-ritik.herokuapp.com/)
+If you want to have a demo of the web app you can [click here](https://pure-reaches-41056.herokuapp.com/)
 ### Approach:
  I defined a model that contains all the attributes stored in the SQLite table. Then I created two forms, one for the submission and another to get the details of the checkout time. In views.py file, there are two functions defined mainly, one to get the input and store the visitor's arrival info into the SQLite database, send the required info to the host and another to set checkout time and send the checkout details to the visitor. It also takes care of certain errors and exceptions. Then used HTML, CSS for the frontend integrated with the backend.
    
