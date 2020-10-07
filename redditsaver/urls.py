@@ -17,6 +17,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.Reddit, name='Reddit'),
-    path('https://pure-reaches-41056.herokuapp.com/index', views.Index, name='Index')
+    path('', views.Reddit, name='reddit'),
+    path('index', views.Index, name='index')
 ]
