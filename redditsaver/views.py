@@ -19,6 +19,7 @@ def Index(request):
     Redditt.auth.authorize(Code)
     Name = Redditt.user.me()
     Subscribed = list(Redditt.user.subreddits(limit=None))
+    import pdb; pdb.set_trace()
     for Sub in Subscribed:
         SubRedditt = Redditt.subreddit(str(Sub))
         New_Redd = SubRedditt.new(limit=None)
