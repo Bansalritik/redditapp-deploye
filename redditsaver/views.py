@@ -40,7 +40,7 @@ def Index(request):
                                            Reddit_Score=Submission.score, Reddit_Domain=Submission.domain,
                                            Reddit_User=Author_Name, Reddit_Subred=str(Sub), Reddit_Body=Submission.url,
                                            Reddit_Link=temp)
-            if i>101:
+            if i>20:
                 break
             i+=1
     print(Reddit_Data.objects.all().count())
