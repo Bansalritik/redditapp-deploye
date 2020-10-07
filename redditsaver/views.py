@@ -8,6 +8,7 @@ from .models import Reddit_Data
 
 
 def Index(request):
+    Reddit_Data.objects.all().delete()
     try:
         Code = request.GET['code']  # This is coming back correctly
     except:
