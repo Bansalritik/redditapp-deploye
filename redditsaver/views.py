@@ -57,7 +57,7 @@ def Reddit(request):
                           client_secret="tAGWTHloyLIXbTRpCgV3FMSQVg8",
                           redirect_uri="https://pure-reaches-41056.herokuapp.com/index",
                           user_agent="testscript by u/fakebot3")
-    return redirect(Redditt.auth.url(['identity, edit, flair, history, modconfig, '
-                                      'modflair, modlog, modposts, modwiki, mysubreddits, privatemessages,read,report,'
-                                      ' save, submit, ''subscribe, vote, wikiedit, wikiread'], "...", "temporary"))
+    return redirect(Redditt.auth.url(['identity, history, '
+                                      'modlog, modposts, modwiki, mysubreddits,read,'
+                                      ' save, ''subscribe, wikiread'], "...", "temporary"))
 

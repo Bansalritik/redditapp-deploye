@@ -12,7 +12,7 @@
     <div class="ui inverted menu">
         <a class="active item">
             <i class="reddit icon large"></i>
-          Hello {{ UserName }}, Welcome to Reddit
+          Hello {{ UserName }}
     </div>
     <div class="ui stackable grid" style="margin-left: 10em; margin-top: 10em;">
         <div class="left floated nine wide column">
@@ -23,8 +23,7 @@
                       <div class="content">
                         <div class="header">u/{{ fields.Reddit_Subred }}</div>
                         <div class="meta">
-                          <span class="right floated time">2 days ago</span>
-                          <span class="category">{{ fields.Reddit_Username }}</span>
+                          <span class="category">{{ fields.Reddit_User }}</span>
                         </div>
                       </div>
                       <div class="content">
@@ -32,7 +31,7 @@
                           <h4 class="ui header">
                             {{ fields.Reddit_Title }}
                           </h4>
-                          <p><a href="{{ fields.Reddit_Body }}" target= "blank">Click To Open</a></p>
+                          <p><a href="{{ fields.Reddit_Body }}" target= "blank">Click To Open URL</a></p>
                         </div>
                       </div>
                       <div class="extra content">
