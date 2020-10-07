@@ -15,7 +15,7 @@ def Index(request):
         return redirect('/')
     Redditt = praw.Reddit(client_id="VwPMw5sfsqc9Ig",
                           client_secret="tAGWTHloyLIXbTRpCgV3FMSQVg8",
-                          redirect_uri="http://localhost/index",
+                          redirect_uri="https://pure-reaches-41056.herokuapp.com/index",
                           user_agent="testscript by u/fakebot3")
     Redditt.auth.authorize(Code)
     Name = Redditt.user.me()
@@ -56,7 +56,7 @@ def Index(request):
 def Reddit(request):
     Redditt = praw.Reddit(client_id="VwPMw5sfsqc9Ig",
                           client_secret="tAGWTHloyLIXbTRpCgV3FMSQVg8",
-                          redirect_uri="https://localhost/index",
+                          redirect_uri="https://pure-reaches-41056.herokuapp.com/index",
                           user_agent="testscript by u/fakebot3")
     return redirect(Redditt.auth.url(['identity, edit, flair, history, modconfig, '
                                       'modflair, modlog, modposts, modwiki, mysubreddits, privatemessages,read,report,'
